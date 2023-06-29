@@ -11,36 +11,33 @@ describe("getError", () => {
     }); 
 });
 
-    describe("getData", () => {
-        test("should get a definition", () => {
-            const response = {
-                "entries": [
+describe("getData", () => {
+    test("should get a definition", () => {
+        const response = {
+            "entries": [
+                {
+                    "lexemes": [
                     {
-                        "lexemes": [
-                        {
-                            "senses": [
-                                {
-                                    "definition": "(heading) Employment.",
-                                }
-                            ]
-                        }
-                    ]
+                        "senses": [
+                            {
+                                "definition": "(heading) Employment.",
+                            }
+                        ]
                     }
                 ]
-                
-            };
-            const data = getData(response);
-            expect(data).toEqual({
-                "Definition": "(heading) Employment."
-            });
-        });
+                }
+            ]
+            
+        };
+        const data = getData(response);
+        expect(data).toEqual({ "Definition": "(heading) Employment." });
     });
+});
 
-    // describe("getDefiniton", () => {
-//     test("explanation", () => {
-//         const ipt = "";
-//         const val = "";
-//         const component = new Component(ipt);
-//         expect(component.property).toBe(val);
-//     })
-// })
+describe("getDefiniton", () => {
+    test("should get a definition", () => {
+        const word = "work";
+        const response = getDefinition(word);
+        expect(response).toBe({ "Definition": "(heading) Employment." });
+    })
+})
