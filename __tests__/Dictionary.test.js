@@ -14,19 +14,25 @@ describe("getError", () => {
     describe("getData", () => {
         test("should get a definition", () => {
             const response = {
-                "lexemes": [
+                "entries": [
                     {
-                        "senses": [
-                            {
-                                "definition": "(heading) Employment.",
-                            }
-
-                        ]
+                        "lexemes": [
+                        {
+                            "senses": [
+                                {
+                                    "definition": "(heading) Employment.",
+                                }
+                            ]
+                        }
+                    ]
                     }
                 ]
+                
             };
             const data = getData(response);
-            expect(data).toEqual({ "Definition": "(heading) Employment." });
+            expect(data).toEqual({
+                "Definition": "(heading) Employment."
+            });
         });
     });
 
