@@ -7,7 +7,7 @@ describe("getError", () => {
             statusText: 'Not Found'
         };
         const error = getError(response);
-        expect(error).toBe("404 Not Found");
+        expect(error).toBe("There was an ERROR!!! 404 Not Found");
     }); 
 });
 
